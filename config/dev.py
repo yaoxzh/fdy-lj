@@ -42,7 +42,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fdy-lj',  # noqa
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'fdyroot',
         'HOST': 'localhost',
         'PORT': '3306',
     },

@@ -40,7 +40,7 @@ DATABASES.update(
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'fdy-lj',  # 数据库名
             'USER': 'root',  # 数据库用户
-            'PASSWORD': 'root',  # 数据库密码
+            'PASSWORD': 'fdyroot',  # 数据库密码
             'HOST': 'localhost',  # 数据库主机
             'PORT': '3306',  # 数据库端口
         },
