@@ -40,7 +40,7 @@ DATABASES.update(
             "NAME": 'fdylanjing',  # noqa
             "USER": "root",
             "PASSWORD": "1234",
-            "HOST": "192.169.16.160",
+            "HOST": "192.168.16.160",
             "PORT": "3306",
         },
     }
