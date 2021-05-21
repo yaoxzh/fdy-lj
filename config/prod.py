@@ -37,13 +37,13 @@ LOG_LEVEL = 'ERROR'
 
 DATABASES.update(
     {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'fdy-lj',  # 数据库名
-            'USER': 'root',  # 数据库用户
-            'PASSWORD': 'fdyroot',  # 数据库密码
-            'HOST': 'localhost',  # 数据库主机
-            'PORT': '3306',  # 数据库端口
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": 'fdylanjing',  # noqa
+            "USER": "root",
+            "PASSWORD": "1234",
+            "HOST": "localhost",
+            "PORT": "3306",
         },
     }
 )

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6d70e73-7cec-4d77-8907-10996e891d6b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/fdy-lj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fdy-lj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/stag.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/stag.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +69,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,55 +91,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="602" y="291" key="#Notifications" timestamp="1593744443920">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="602" y="291" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1593744443920" />
-    <state x="174" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594014600307">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="174" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1594014600307" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1593746123106">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1593746123106" />
-    <state width="899" height="215" key="GridCell.Tab.0.bottom" timestamp="1594028013478">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1594028013478" />
-    <state width="899" height="215" key="GridCell.Tab.0.center" timestamp="1594028013478">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1594028013478" />
-    <state width="899" height="215" key="GridCell.Tab.0.left" timestamp="1594028013478">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1594028013478" />
-    <state width="899" height="215" key="GridCell.Tab.0.right" timestamp="1594028013478">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1594028013478" />
-    <state width="899" height="215" key="GridCell.Tab.1.bottom" timestamp="1594028013479">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1594028013479" />
-    <state width="899" height="215" key="GridCell.Tab.1.center" timestamp="1594028013479">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1594028013479" />
-    <state width="899" height="215" key="GridCell.Tab.1.left" timestamp="1594028013479">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1594028013479" />
-    <state width="899" height="215" key="GridCell.Tab.1.right" timestamp="1594028013479">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="899" height="215" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1594028013479" />
-    <state x="221" y="61" key="SettingsEditor" timestamp="1594014560929">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="221" y="61" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1594014560929" />
   </component>
 </project>

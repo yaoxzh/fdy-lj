@@ -40,9 +40,9 @@ def get_env_or_raise(key):
 
 
 # 应用 ID
-APP_CODE = 'fdy-lj'
+APP_CODE = 'fandiyuanlj'
 # 应用用于调用云 API 的 Secret
-SECRET_KEY = '51b93d35-75ac-4e5b-b8fc-ea69772b49ea'
+SECRET_KEY = '8fa16373-c274-41a2-add3-0060417591c0'
 
 # SaaS运行版本，如非必要请勿修改
 RUN_VER = 'open'
