@@ -11,7 +11,7 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 specific language governing permissions and limitations under the License.
 """
 
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 
 
 # 开发框架中通过中间件默认是需要登录态的，如有不需要登录的，可添加装饰器login_exempt
@@ -20,7 +20,8 @@ def home(request):
     """
     首页
     """
-    return render(request, "home_application/index_home.html")
+    return render(request, "home_application/monitor.html")
+    # return HttpResponse('hello')
 
 
 def dev_guide(request):

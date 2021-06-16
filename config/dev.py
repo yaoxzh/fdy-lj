@@ -45,9 +45,9 @@ DEBUG = True
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": APP_CODE,  # noqa
+        "NAME": 'fdy_blueking',  # noqa
         "USER": "root",
-        "PASSWORD": "",
+        "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": "3306",
     },
