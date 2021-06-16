@@ -23,12 +23,12 @@ from blueapps.account.handlers.response import ResponseHandler
 
 try:
     from django.utils.deprecation import MiddlewareMixin
-except Exception:
+except Exception:  # pylint: disable=broad-except
     MiddlewareMixin = object
 
 
-logger = logging.getLogger('component')
-cache = caches['login_db']
+logger = logging.getLogger("component")
+cache = caches["login_db"]
 
 
 class LoginRequiredMiddleware(MiddlewareMixin):
@@ -38,27 +38,27 @@ class LoginRequiredMiddleware(MiddlewareMixin):
         1. views decorated with 'login_exempt' keyword
         2. User has logged in calling auth.login
         """
-        if hasattr(request, 'is_wechat') and request.is_wechat():
+        if hasattr(request, "is_wechat") and request.is_wechat():
             return None
 
-        if hasattr(request, 'is_bk_jwt') and request.is_bk_jwt():
+        if hasattr(request, "is_bk_jwt") and request.is_bk_jwt():
             return None
 
-        if hasattr(request, 'is_rio') and request.is_rio():
+        if hasattr(request, "is_rio") and request.is_rio():
             return None
 
-        if getattr(view, 'login_exempt', False):
+        if getattr(view, "login_exempt", False):
             return None
 
         # 先做数据清洗再执行逻辑
         form = AuthenticationForm(request.COOKIES)
         if form.is_valid():
-            bk_token = form.cleaned_data['bk_token']
+            bk_token = form.cleaned_data["bk_token"]
             session_key = request.session.session_key
             if session_key:
                 # 确认 cookie 中的 ticket 和 cache 中的是否一致
                 cache_session = cache.get(session_key)
-                is_match = (cache_session and bk_token == cache_session.get('bk_token'))
+                is_match = cache_session and bk_token == cache_session.get("bk_token")
                 if is_match and request.user.is_authenticated:
                     return None
 
@@ -68,7 +68,9 @@ class LoginRequiredMiddleware(MiddlewareMixin):
 
             if user is not None and request.user.is_authenticated:
                 # 登录成功，重新调用自身函数，即可退出
-                cache.set(session_key, {'bk_token': bk_token}, settings.LOGIN_CACHE_EXPIRED)
+                cache.set(
+                    session_key, {"bk_token": bk_token}, settings.LOGIN_CACHE_EXPIRED
+                )
                 return self.process_view(request, view, args, kwargs)
 
         handler = ResponseHandler(ConfFixture, settings)

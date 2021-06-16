@@ -35,8 +35,8 @@ def send_sms(user_list, content):
 
     # 2. 拼接发送函数的内容
     request_args = {
-        ConfFixture.SMS_CLIENT_USER_ARGS_NAME: ','.join(user_list),
-        ConfFixture.SMS_CLIENT_CONTENT_ARGS_NAME: content
+        ConfFixture.SMS_CLIENT_USER_ARGS_NAME: ",".join(user_list),
+        ConfFixture.SMS_CLIENT_CONTENT_ARGS_NAME: content,
     }
 
     # 3. 发送短信

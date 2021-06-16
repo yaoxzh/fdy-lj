@@ -23,14 +23,10 @@ def load_data(apps, schema_editor):
     for name in settings.INIT_SUPERUSER:
         User.objects.update_or_create(
             username=name,
-            defaults={'is_staff': True, 'is_active': True, 'is_superuser': True}
+            defaults={"is_staff": True, "is_active": True, "is_superuser": True},
         )
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('account', '0001_initial')
-    ]
-    operations = [
-        migrations.RunPython(load_data)
-    ]
+    dependencies = [("account", "0001_initial")]
+    operations = [migrations.RunPython(load_data)]

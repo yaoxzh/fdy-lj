@@ -132,7 +132,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"verbose_name": "user", "verbose_name_plural": "users", },
+            options={"verbose_name": "user", "verbose_name_plural": "users",},
         ),
         migrations.CreateModel(
             name="UserProperty",
@@ -180,7 +180,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="UserProxy",
             fields=[],
-            options={"proxy": True, "indexes": [], },
+            options={"proxy": True, "indexes": [],},
             bases=("account.user",),
         ),
         migrations.AlterUniqueTogether(

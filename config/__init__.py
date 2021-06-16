@@ -14,17 +14,15 @@ specific language governing permissions and limitations under the License.
 from __future__ import absolute_import
 
 import os
-import pymysql
-pymysql.install_as_MySQLdb()
+
 # This will make sure the app is always imported when
 # Django starts so that shared_task will use this app.
 from blueapps.core.celery import celery_app
 
-__all__ = ['celery_app', 'RUN_VER', 'APP_CODE', 'SECRET_KEY', 'BK_URL', 'BASE_DIR']
+__all__ = ["celery_app", "RUN_VER", "APP_CODE", "SECRET_KEY", "BK_URL", "BASE_DIR"]
 
 
 # app 基本信息
-
 
 
 def get_env_or_raise(key):
@@ -33,22 +31,22 @@ def get_env_or_raise(key):
     value = os.environ.get(key)
     if not value:
         raise RuntimeError(
-            ('Environment variable "{}" not found, you must set this variable to run this application.'
-             ).format(key)
+            (
+                'Environment variable "{}" not found, you must set this variable to run this application.'
+            ).format(key)
         )
     return value
 
 
 # 应用 ID
-APP_CODE = 'fandiyuanlj'
+APP_CODE = ""
 # 应用用于调用云 API 的 Secret
-SECRET_KEY = '8fa16373-c274-41a2-add3-0060417591c0'
+SECRET_KEY = ""
 
 # SaaS运行版本，如非必要请勿修改
-RUN_VER = 'open'
+RUN_VER = "open"
 # 蓝鲸SaaS平台URL，例如 http://paas.bking.com
-BK_URL = 'http://paas.bk.com:80'
+BK_URL = None
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(
-    __file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

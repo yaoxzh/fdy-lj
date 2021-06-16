@@ -20,7 +20,6 @@ from blueapps.account.sites.default import ConfFixture as default_fixture
 
 
 class _ConfFixture(object):
-
     def __init__(self, fixture_module):
         # store the module
         self._fixture = import_string(fixture_module)
@@ -35,19 +34,18 @@ class _ConfFixture(object):
             setting = getattr(default_fixture, name)
             if setting is None:
                 raise ImproperlyConfigured(
-                    'Requested %s, but ConfFixture are not configured. '
-                    'You must set options in ConfFixture in right site.conf.py'
-                    % name)
+                    "Requested %s, but ConfFixture are not configured. "
+                    "You must set options in ConfFixture in right site.conf.py" % name
+                )
             return setting
 
-        raise KeyError('%s not exist' % name)
+        raise KeyError("%s not exist" % name)
 
 
-mod = 'blueapps.account.sites.{VER}.conf.ConfFixture'.format(
-    VER=settings.RUN_VER)
-ConfFixture = _ConfFixture(mod)
+MOD = "blueapps.account.sites.{VER}.conf.ConfFixture".format(VER=settings.RUN_VER)
+ConfFixture = _ConfFixture(MOD)
 
-AUTH_USER_MODEL = 'account.User'
+AUTH_USER_MODEL = "account.User"
 
 ######################
 # 二次验证配置默认参数 #
@@ -55,8 +53,8 @@ AUTH_USER_MODEL = 'account.User'
 
 # 短信验证有效时间
 SECOND_VERIFY_CONF = {
-    'VALID_MINUTES': 5,
-    'RETRY_MINUTES': 3,
-    'SMS_FORMAT': _(u'您正在蓝鲸应用上执行敏感操作，验证码：{}'),
-    'CODE_NAME': 'bk_verify_code'
+    "VALID_MINUTES": 5,
+    "RETRY_MINUTES": 3,
+    "SMS_FORMAT": _(u"您正在蓝鲸应用上执行敏感操作，验证码：{}"),
+    "CODE_NAME": "bk_verify_code",
 }

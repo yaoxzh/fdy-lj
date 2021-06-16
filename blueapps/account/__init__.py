@@ -25,7 +25,10 @@ def get_user_model():
 
 
 if AUTH_USER_MODEL == settings.AUTH_USER_MODEL:
-    from django.contrib import auth
+    from django.contrib import auth  # pylint: disable=ungrouped-imports
+
     auth.get_user_model = get_user_model
 
-default_app_config = 'blueapps.account.apps.AccountConfig'
+default_app_config = (
+    "blueapps.account.apps.AccountConfig"  # pylint: disable=invalid-name
+)

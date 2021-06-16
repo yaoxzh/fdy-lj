@@ -21,18 +21,18 @@ def home(request):
     首页
     """
 
-    return render(request, 'mako_application/index_home.mako')
+    return render(request, "mako_application/index_home.mako")
 
 
 def dev_guide(request):
     """
     开发指引
     """
-    return render(request, 'mako_application/dev_guide.mako')
+    return render(request, "mako_application/dev_guide.mako")
 
 
 def contact(request):
     """
     联系页
     """
-    return render(request, 'mako_application/contact.mako')
+    return render(request, "mako_application/contact.mako")

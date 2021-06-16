@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fdy-lj.iml" filepath="$PROJECT_DIR$/.idea/fdy-lj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fdy_blueking.iml" filepath="$PROJECT_DIR$/.idea/fdy_blueking.iml" />
     </modules>
   </component>
 </project>

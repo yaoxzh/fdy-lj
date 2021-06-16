@@ -11,7 +11,7 @@ class CollectionsUSERMANAGE(object):
         self.department_ancestor = ComponentAPI(
             client=self.client, method='GET',
             path='/api/c/compapi{bk_api_ver}/usermanage/department_ancestor/',
-            description=u'查询部门全部祖先'
+            description=u'查询部门全部祖先 (旧版接口，不推荐使用，后续会下架，请尽快迁移)'
         )
         self.list_department_profiles = ComponentAPI(
             client=self.client, method='GET',

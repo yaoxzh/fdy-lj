@@ -40,7 +40,7 @@ def html_escape(str_escape, fromtype=0, is_json=False):
     try:
         result_str = escape_new(str_escape, fromtype, is_json)
         return result_str
-    except Exception:
+    except Exception:  # pylint: disable=broad-except
         return str_escape
 
 
@@ -52,7 +52,7 @@ def url_escape(url_escape):
     try:
         result_str = escape_url(url_escape)
         return result_str
-    except Exception:
+    except Exception:  # pylint: disable=broad-except
         return url_escape
 
 
@@ -64,32 +64,32 @@ def html_escape_name(str_escape):
     try:
         result_str = escape_name(str_escape)
         return result_str
-    except Exception:
+    except Exception:  # pylint: disable=broad-except
         return str_escape
 
 
-def escape_url(s):
-    s = s.replace("<", "")
-    s = s.replace(">", "")
-    s = s.replace(' ', "")
-    s = s.replace('"', "")
-    s = s.replace("'", "")
-    return s
+def escape_url(input_str):
+    input_str = input_str.replace("<", "")
+    input_str = input_str.replace(">", "")
+    input_str = input_str.replace(" ", "")
+    input_str = input_str.replace('"', "")
+    input_str = input_str.replace("'", "")
+    return input_str
 
 
-def escape_name(s):
-    '''Replace special characters "&", "<" and ">" to HTML-safe sequences.
+def escape_name(input_str):
+    """Replace special characters "&", "<" and ">" to HTML-safe sequences.
     If the optional flag quote is true, the quotation mark character (")
     is also translated.
     rewrite the cgi method
-    '''
-    s = s.replace("&", "")  # Must be done first!
-    s = s.replace("<", "")
-    s = s.replace(">", "")
-    s = s.replace(' ', "")
-    s = s.replace('"', "")
-    s = s.replace("'", "")
-    return s
+    """
+    input_str = input_str.replace("&", "")  # Must be done first!
+    input_str = input_str.replace("<", "")
+    input_str = input_str.replace(">", "")
+    input_str = input_str.replace(" ", "")
+    input_str = input_str.replace('"', "")
+    input_str = input_str.replace("'", "")
+    return input_str
 
 
 def check_script(str_escape):
@@ -102,28 +102,28 @@ def check_script(str_escape):
         parser = XssHtml()
         parser.feed(str_escape)
         parser.close()
-        return parser.getHtml()
-    except Exception:
+        return parser.get_html()
+    except Exception:  # pylint: disable=broad-except
         return str_escape
 
 
-def escape_new(s, fromtype, is_json):
-    '''Replace special characters "&", "<" and ">" to HTML-safe sequences.
+def escape_new(input_str, fromtype, is_json):
+    """Replace special characters "&", "<" and ">" to HTML-safe sequences.
     If the optional flag quote is true, the quotation mark character (")
     is also translated.
     rewrite the cgi method
     @param fromtype: 来源，0：views函数，1：middleware（对&做转换），默认是0
     @param is_json: 是否为json串（True/False
-    '''
+    """
     # &转换
     if fromtype == 1 and not is_json:
-        s = s.replace("&", "&amp;")
+        input_str = input_str.replace("&", "&amp;")
     # <>转换
-    s = s.replace("<", "&lt;")
-    s = s.replace(">", "&gt;")
+    input_str = input_str.replace("<", "&lt;")
+    input_str = input_str.replace(">", "&gt;")
     # 单双引号转换
     if not is_json:
-        s = s.replace(' ', "&nbsp;")
-        s = s.replace('"', "&quot;")
-        s = s.replace("'", "&#39;")
-    return s
+        input_str = input_str.replace(" ", "&nbsp;")
+        input_str = input_str.replace('"', "&quot;")
+        input_str = input_str.replace("'", "&#39;")
+    return input_str
