@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+{% load staticfiles %}
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,19 +40,19 @@
                     <div class="nav-container">
                         <div class="navbar-header">
                             <button class="pull-right visible-xs navbar-toggle collapsed navbar-toggle-sm" type="button" data-toggle="collapse" data-target="#king-header2-navbar-collapse"> <i class="fa fa-fw fa-ellipsis-v">                    </i> </button>
-                            <a class="navbar-brand" href="javascript:;" title="监控预警系统">
+                            <a class="navbar-brand" href="javascript:;" title="故障预警系统">
                                 <img src="https://magicbox.bk.tencent.com/static_api/v3/bk/images/logo.png" alt="" class="logo" style="margin-top:-5px;"> </a>
                         </div>
                         <div class="navbar-collapse collapse" id="king-header2-navbar-collapse">
                             <ul class="nav navbar-nav navbar-left hidden-sm">
                                 <li class="open">
-                                    <a href="javascript:void(0);">
+                                    <a href="{% url 'index:home' %}">
                                         <span>项目信息</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">
-                                        <span>监控预警</span>
+                                    <a href="{% url 'index:trouble_police' %}">
+                                        <span>故障预警</span>
                                     </a>
                                 </li>
                                 <li>
@@ -61,12 +61,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <a href="{% url 'index:log_search' %}">
                                         <span>数据查询</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <a href="{% url 'index:monitor_health' %}">
                                         <span>数据健康度</span>
                                     </a>
                                 </li>
@@ -92,23 +92,33 @@
             </nav>
             <div class="container-fluid mb0 ">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0); cursor: default;" id="chart_1623829831560" class="king-chart-box chart-area " _echarts_instance_="1623829623849"></div>
+                    <div class="col-md-4">
+                        <div style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0); cursor: default;" id="chart_1623832313979" class="king-chart-box chart-area " _echarts_instance_="1623829882048"></div>
                     </div>
-                    <div class="col-md-3">
-                        <div style="height: 300px; position: relative;" id="chart_1623829845074" class="king-chart-box chart-pie  k-chart" data-role="chart"></div>
+                    <div class="col-md-4">
+                        <div style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0); cursor: default;" id="chart_1623832316423" class="king-chart-box chart-area " _echarts_instance_="1623829882049"></div>
                     </div>
-                    <div class="col-md-3">
-                        <div style="height: 300px; position: relative;" id="chart_1623829852035" class="king-chart-box chart-area  k-chart" data-role="chart"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0); cursor: default;" id="chart_1623829859856" class="king-chart-box chart-funnel " _echarts_instance_="1623829623850"></div>
+                    <div class="col-md-4">
+                        <div style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0); cursor: default;" id="chart_1623832318241" class="king-chart-box chart-area " _echarts_instance_="1623829882050"></div>
                     </div>
                 </div>
             </div>
-            <div style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0); cursor: default;" id="chart_1623829865625" class="king-chart-box chart-funnel " _echarts_instance_="1623829623851"></div>
+            <div class="container-fluid mb0 ">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div style="height: 300px; position: relative;" id="chart_1623832295069" class="king-chart-box chart-line  k-chart" data-role="chart"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="height: 300px; position: relative;" id="chart_1623832308051" class="king-chart-box chart-line  k-chart" data-role="chart"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="height: 300px; position: relative;" id="chart_1623832311278" class="king-chart-box chart-line  k-chart" data-role="chart"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+<!--    折线图样式1-->
     <script>
         function createEStandLineChart(conf){
             var myChart = echarts.init(document.getElementById(conf.selector));
@@ -170,126 +180,72 @@
     <script>
         $(function(){
             initEStandLineChart({
-                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/chart3/demo.json',
+                url: 'http://dev.paas.bk.com:8000/data/',
                 dataType: 'json',
-                containerId: 'chart_1623829831560'
+                containerId: 'chart_1623832313979'
             });
         });
-    </script>
-    <script>
-        // 创建图表
-        function createKendoPieChart(conf){
-            $(conf.selector).kendoChart({
-                title: {
-                    text: conf.data.title
-                },
-                legend: {
-                   position: "bottom"
-                },
-                theme : 'bootstrap',
-                seriesDefaults: {
-                    labels: {
-                        template: "#= category # - #= kendo.format('{0:P}', percentage)#",
-                        position: "outsideEnd",
-                        visible: true,
-                        background: "transparent"
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    data: conf.data.series
-                }],
-                tooltip: {
-                    visible: true,
-                    template: "#= category # - #= kendo.format('{0:P}', percentage) #"
-                }
-            });
-            $(window).resize(function(){
-                $(conf.selector).data("kendoChart").refresh();
-            });
-        }
-
-        function initKendoPieChart(conf){
-            // 异步请求后台数据
-            $.ajax({
-                url: conf.url,
-                type: 'GET',
-                dataType: conf.dataType,
-                success: function(res){
-                    //获取数据成功
-                    if (res.result){
-                        var data = {
-                            series: res.data.series
-                        };
-                        createKendoPieChart({
-                            selector: conf.container, // 图表容器
-                            data: data // 图表数据
-                        });
-                    }
-                }
-            });
-        }
     </script>
     <script>
         $(function(){
-            initKendoPieChart({
-                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/charts_pie/demo.json',
+            initEStandLineChart({
+                url: 'http://dev.paas.bk.com:8000/data/',
                 dataType: 'json',
-                container: '#chart_1623829845074'
+                containerId: 'chart_1623832316423'
             });
         });
     </script>
     <script>
+        $(function(){
+            initEStandLineChart({
+                url: 'http://dev.paas.bk.com:8000/data/',
+                dataType: 'json',
+                containerId: 'chart_1623832318241'
+            });
+        });
+    </script>
+
+<!--    折线图样式2-->
+    <script>
         // 创建图表
-        function createKendoAreaChart(conf) {
+        function createKendoLineChart(conf){
             $(conf.selector).kendoChart({
-                title: {
-                    text: conf.data.title
-                },
-                theme: 'bootstrap',
+                transitions: false,
                 legend: {
-                    position: "bottom"
+                   position: "bottom"
                 },
+                colors: ['yellow'],
+                theme : 'bootstrap',
                 seriesDefaults: {
-                    type: 'area',
-                    area: {
-                        line: {
-                            style: "smooth"
-                        }
+                    type: 'line',
+                    style: "smooth",
+                    markers: {
+                        visible: false
                     }
                 },
-                series: conf.data.series ,
-                valueAxis: {
-                    labels: {
-                        format: "{0}%"
-                    },
-                    line: {
-                        visible: false
-                    },
-                    axisCrossingValue: -10
-                },
+                series: conf.data.series,
                 categoryAxis: {
-                    categories: conf.data.categories ,
-                    majorGridLines: {
+                    majorGridLines : {
                         visible: false
                     },
+                    categories: conf.data.categories,
                     labels: {
                         rotation: "auto"
                     }
                 },
                 tooltip: {
                     visible: true,
-                    format: "{0}%",
-                    template: "#= series.name #: #= value #"
+                    template: "#= category # #= value #"
                 }
             });
-            $(window).resize(function(){
-                $(conf.selector).data("kendoChart").refresh();
+            //重新绘制
+            $(window).on('resize',function(){
+                var chart = $(conf.selector).data("kendoChart");
+                chart.redraw();
             });
-
         }
 
-        function initKendoAreaChart(conf){
+        function initKendoLineChart(conf){
             // 异步请求后台数据
             $.ajax({
                 url: conf.url,
@@ -302,7 +258,7 @@
                             series: res.data.series,
                             categories: res.data.categories
                         };
-                        createKendoAreaChart({
+                        createKendoLineChart({
                             selector: conf.container, // 图表容器
                             data: data // 图表数据
                         });
@@ -313,131 +269,28 @@
     </script>
     <script>
         $(function(){
-            initKendoAreaChart({
-                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/charts_area/demo.json',
+            initKendoLineChart({
+                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/charts_line/demo.json',
                 dataType: 'json',
-                container: '#chart_1623829852035'
+                container: '#chart_1623832295069'
             });
         });
     </script>
     <script>
-        function createEInstrumentChart(conf){
-            //--- 仪表盘 ---
-            var myChart = echarts.init(document.getElementById(conf.selector));
-            myChart.setOption({
-                tooltip : {
-                    formatter: "{a} {b} : {c}%"
-                },
-                toolbox: {
-                    show : true,
-                    feature : {
-                        mark : {show: true},
-                        restore : {show: true},
-                        saveAsImage : {show: true}
-                    }
-                },
-                series : conf.data.series
-            });
-        }
-
-        function initEInstrumentChart(conf){
-            $.ajax({
-                url: conf.url,
-                type: 'GET',
-                dataType: conf.dataType,
-                success: function(res){
-                    //获取数据成功
-                    if (res.result){
-                        var data = res.data;
-                        createEInstrumentChart({
-                            selector: conf.containerId, // 图表容器
-                            data: data, // 图表数据
-                        });
-                    }
-                }
-            })
-        }
-    </script>
-    <script>
         $(function(){
-            initEInstrumentChart({
-                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/chart25/demo.json',
+            initKendoLineChart({
+                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/charts_line/demo.json',
                 dataType: 'json',
-                containerId: 'chart_1623829859856'
+                container: '#chart_1623832308051'
             });
         });
     </script>
     <script>
-        // 创建图表
-        function createEChinaChart(conf){
-            //--- 地图 ---
-            var myChart = echarts.init(document.getElementById(conf.selector));
-            var legendData = [];
-            for(var i = 0; i < conf.data.series.length; i++){
-                legendData.push(conf.data.series[i].name)
-            };
-            myChart.setOption({
-                title:conf.data.title,
-                tooltip : {
-                    trigger: 'item'
-                },
-                legend: {
-                    y:'bottom',
-                    data:legendData
-                },
-                dataRange: {
-                    min: 0,
-                    max: 2500,
-                    x: 'left',
-                    y: 'bottom',
-                    text:['高','低'],           // 文本，默认为数值文本
-                    calculable : true
-                },
-                toolbox: {
-                    show: true,
-                    x: 'center',
-                    feature : {
-                        mark : {show: true},
-                        dataView : {show: true, readOnly: false},
-                        restore : {show: true},
-                        saveAsImage : {show: true}
-                    }
-                },
-                roamController: {
-                    show: true,
-                    x: 'right',
-                    mapTypeControl: {
-                        'china': true
-                    }
-                },
-                series:conf.data.series
-            });
-        }
-
-        function initEChinaChart(conf){
-            $.ajax({
-                url: conf.url,
-                type: 'GET',
-                dataType: conf.dataType,
-                success: function(res){
-                    //获取数据成功
-                    if (res.result){
-                        var data = res.data;
-                        createEChinaChart({
-                            selector: conf.containerId, // 图表容器
-                            data: data, // 图表数据
-                        });
-                    }
-                }
-            })
-        }
-    </script>
-    <script>
         $(function(){
-            initEChinaChart({
-                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/chart7/demo.json',
+            initKendoLineChart({
+                url: 'https://magicbox.bk.tencent.com/static_api/v3/components/charts_line/demo.json',
                 dataType: 'json',
-                containerId: 'chart_1623829865625'
+                container: '#chart_1623832311278'
             });
         });
     </script>

@@ -20,3 +20,5 @@ requests==2.22.0
 python-json-logger==0.1.7
 whitenoise==3.3.0
 six==1.11.0
+
+pyVmoni==7.0.2

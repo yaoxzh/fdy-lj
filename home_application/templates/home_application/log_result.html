@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>日志检索</title>
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css-pro/bk.css" rel="stylesheet">
+    <link href="{% static 'log_search/css/common.css' %}" rel="stylesheet">
+    <link href="{% static 'log_search/css/index.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="bk-horz-nav11">
+        <div class="bk-nav-logo fl">
+            <img src="https://magicbox.bk.tencent.com/static_api/v3/bk/images/logo1.png">日志检索
+        </div>
+        <div class="bk-nav-user fr">
+            <span>admin</span>
+            <img src="{% static 'log_search/images/avatar.png' %}">
+        </div>
+        <ul class="bk-nav-links fr">
+            <li>
+                <a href="{% url 'index:home' %}">首页</a>
+            </li>
+            <li class="active">
+                <a href="{% url 'index:log_result' %}">搜索结果</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="search-result-box">
+        <form class="bk-form bk-inline-form search-form clearfix">
+            <div class="bk-form-item bk-form-large">
+                <div class="bk-form-content">
+                    <input type="text" class="bk-form-input search-input" placeholder="搜索" style="width:540px;">
+                </div>
+            </div>
+            <div class="bk-form-item">
+                <div class="bk-form-content">
+                    <a class="bk-button bk-primary bk-button-large search-button" href="javascript:void(0);" title="查询">查询</a>
+                </div>
+            </div>
+            <p class="result-tip">找到48120条结果（用时0.02秒）</p>
+        </form>
+    </div>
+    <div class="page-content">
+        <div class="page-content-wrapper">
+
+            <div class="bk-panel bk-panel-title-btns">
+                <div class="bk-panel-header" role="tab">
+                    <div class="panel-title">日志检索结果</div>
+                    <div class="panel-btns">
+                        <form class="bk-form bk-inline-form" method="POST">
+                            <div class="bk-form-item">
+                                <label class="bk-label">显示项</label>
+                                <div class="bk-form-content">
+                                    <select name="" id="" class="bk-form-select" style="width:150px;">
+                                    <option value="">项目</option>
+                                    <option value="">项目</option>
+                                    <option value="">项目</option>
+                                    <option value="">项目</option>
+                                </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="bk-panel-body">
+                    <table class="bk-table has-thead-bordered">
+                        <thead>
+                            <tr>
+                                <th>IP地址</th>
+                                <th>时间</th>
+                                <th>模块</th>
+                                <th>日志内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>127.0.0.1</td>
+                                <td>2017/02/15 20:12:23</td>
+                                <td>demo</td>
+                                <td>
+                                    ","ApplicationName":"\u6d4b\u8bd5\u4e1a\u52a1","Creator":"test","CreateTime":"2017-01-1216:10:21","Default":"\u516c\u6d4b···
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bk-panel-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bk-footer">
+        <div class="bk-footer-links">
+            <ul>
+                <li>
+                    <a href="###">QQ咨询</a>
+                </li>
+                <li>
+                    <a href="###">蓝鲸论坛</a>
+                </li>
+                <li>
+                    <a href="###">蓝鲸官网</a>
+                </li>
+                <li>
+                    <a href="###">蓝鲸智云工作台</a>
+                </li>
+            </ul>
+        </div>
+        <p class="bk-footer-copyright">
+            Copyright &copy; 2012-2017 Tencent BlueKing. All Rights Reserved. 蓝鲸智云 版权所有
+        </p>
+    </footer>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

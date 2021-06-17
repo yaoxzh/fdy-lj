@@ -77,6 +77,7 @@ MIDDLEWARE += ()  # noqa
 # STATIC_VERSION_END
 STATIC_VERSION = "1.0"
 
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]  # noqa
 
 # CELERY 开关，使用时请改为 True，修改项目目录下的 Procfile 文件，添加以下两行命令：

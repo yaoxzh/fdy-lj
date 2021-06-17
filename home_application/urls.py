@@ -16,7 +16,15 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = (
-    url(r"^$", views.home),
+    url(r"^$", views.home, name='home'),
     url(r"^dev-guide/$", views.dev_guide),
     url(r"^contact/$", views.contact),
+    url(r'^data/$', views.data, name='data'),
+    url(r'^log_search/$', views.log_search, name='log_search'),
+    url(r'^log_result/$', views.log_result, name='log_result'),
+    url(r'^trouble_police/$', views.trouble_police, name='trouble_police'),
+    url(r'^monitor_health/$', views.monitor_health, name='monitor_health'),
+
+
+
 )

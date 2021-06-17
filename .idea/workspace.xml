@@ -2,12 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6d70e73-7cec-4d77-8907-10996e891d6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home_application/templates/home_application/monitor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fdy_blueking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fdy_blueking.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home_application/templates/home_application/log_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home_application/templates/home_application/log_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home_application/templates/home_application/monitor_health.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home_application/templates/home_application/monitor_police.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home_application/utils/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home_application/utils/vsphere_monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/css/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/images/search-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/images/search_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/auth_manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/city_manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/info_manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/information.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/log_search/js/submit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_application/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_application/templates/home_application/monitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/templates/home_application/monitor_line.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home_application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -35,7 +57,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home_application/utils" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\fdy_blueking\home_application\utils" />
+      <recent name="C:\Users\ASUS\Desktop\fdy_blueking\home_application\templates\home_application" />
+      <recent name="C:\Users\ASUS\Desktop\fdy_blueking\static\log_search\images" />
+      <recent name="C:\Users\ASUS\Desktop\fdy_blueking\static\log_search" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
