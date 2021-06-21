@@ -74,6 +74,13 @@ class UserManager(BaseUserManager):
         return self._create_user(username, True, True, password, **extra_fields)
 
 
+# 性别
+GENDER_CHOICES = (
+    ("male", "男"),
+    ("female", "女")
+)
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(
         _("username"),
@@ -116,6 +123,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now,)
+    # 自定义添加的字段
+    birthday = models.DateField(verbose_name="生日", null=True, blank=True)
+    gender = models.CharField(verbose_name="性别", choices=GENDER_CHOICES, max_length=6, default='male')
+    address = models.CharField(max_length=100, verbose_name="地址", default='')
+    mobile = models.CharField(max_length=11, verbose_name="手机号码")
+    image = models.ImageField(verbose_name="用户头像", upload_to="head_image/%Y/%m", default="")
 
     objects = UserManager()
 

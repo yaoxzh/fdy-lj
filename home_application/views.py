@@ -13,8 +13,10 @@ specific language governing permissions and limitations under the License.
 
 from django.shortcuts import render, HttpResponse
 import json
-from home_application.utils import config
-from home_application.utils.vsphere_monitor import add_data, hello_vcenter, run, payload
+
+from home_application.models import Esix, EsixVm
+from home_application.utils.pyvmomi_monitor import save_esxi_data
+
 import time
 import requests
 import sys
@@ -61,44 +63,7 @@ def get_esxi_data(request):
     """
     获取esxi数据
     """
-    host = config.host
-    user = config.user
-    pwd = config.pwd
-    port = config.port
-    interval = config.interval
-
-    # 获取时间
-    dt = time.time()
-    timeStamp = dt
-    # print(timeStamp)
-    timeArray = time.localtime(timeStamp)
-    YMD = time.strftime("%Y-%m-%d", timeArray)
-    otherStyleTime = time.strftime("%Y-%m-%d %H:%M", timeArray)
-    # print(otherStyleTime, type(otherStyleTime))
-    struct_time = time.strptime(otherStyleTime, "%Y-%m-%d %H:%M")
-    # print(struct_time)
-    # print(struct_time.tm_hour, type(struct_time.tm_hour))
-    # ts = int(time.mktime(struct_time))
-    # todo 我们需要的时间戳
-    ts = float(time.mktime(struct_time))
-    print(ts, type(ts))
-    # timeArray = time.localtime(ts)
-    # otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
-    # print(otherStyleTime, type(otherStyleTime))
-
-    # 连接上vcenter
-    success, msg = hello_vcenter(host, user, pwd, port)
-    if success == False:
-        print(msg)
-        add_data("vcenter.alive", 0, "GAUGE", "")
-        # print json.dumps(payload,indent=4)
-        sys.exit(1)
-
-    run(host, user, pwd, port, interval)
-    from pprint import pprint
-
-    print('==============================')
-    pprint(data)
+    save_esxi_data()
     return HttpResponse('...')
 
 

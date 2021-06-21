@@ -22,3 +22,4 @@ whitenoise==3.3.0
 six==1.11.0
 
 pyVmoni==7.0.2
+pillow

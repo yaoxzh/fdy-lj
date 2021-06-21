@@ -115,10 +115,12 @@ IS_BKUI_HISTORY_MODE = False
 # 是否需要对AJAX弹窗登录强行打开
 IS_AJAX_PLAIN_MODE = False
 
+# AUTH_USER_MODEL = 'home_application.UserProfile'
+
 # 国际化配置
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)  # noqa
 
-USE_TZ = True
+USE_TZ = False
 TIME_ZONE = "Asia/Shanghai"
 LANGUAGE_CODE = "zh-hans"
 
@@ -163,3 +165,5 @@ if locals().get("DISABLED_APPS"):
         locals()[_key] = tuple(
             [_item for _item in locals()[_key] if not _item.startswith(_app + ".")]
         )
+
+

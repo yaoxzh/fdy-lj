@@ -24,6 +24,7 @@ urlpatterns = (
     url(r'^log_result/$', views.log_result, name='log_result'),
     url(r'^trouble_police/$', views.trouble_police, name='trouble_police'),
     url(r'^monitor_health/$', views.monitor_health, name='monitor_health'),
+    url(r'esxi_data/$', views.get_esxi_data, name='esxi_data')
 
 
 
